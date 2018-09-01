@@ -11,7 +11,7 @@ export default function reducer(state = {
       return { ...state, changingStatus: 'ongoing' };
     }
     case 'FILTER_SUCCESS': {
-      return { ...state, changingStatus: 'success', data: action.payload };
+      return { ...state, changingStatus: 'success', data: (state.data.concat(action.payload)) };
     }
     case 'FILTER_FAILED': {
       return { ...state, changingStatus: 'failed' };
